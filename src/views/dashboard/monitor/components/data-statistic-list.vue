@@ -12,15 +12,14 @@
       :pagination="false"
     />
     <a-typography-text type="secondary" class="data-statistic-list-tip">
-      {{ $t('monitor.list.tip.rotations') }} {{ data.length }}
-      {{ $t('monitor.list.tip.rest') }}
+      {{ '轮播次数' }} {{ data.length }}
+      {{ '，节目单观众不可见' }}
     </a-typography-text>
   </div>
 </template>
 
 <script lang="ts" setup>
   import { computed, h, compile } from 'vue';
-  import { useI18n } from 'vue-i18n';
   import type {
     TableColumnData,
     TableData,
@@ -33,7 +32,6 @@
     id: string;
     status: number;
   }
-  const { t } = useI18n();
   const data: PreviewRecord[] = [
     {
       cover:
@@ -47,7 +45,7 @@
   const renderTag = (status: number) => {
     if (status === -1) {
       return `<a-tag  color="red" class='data-statistic-list-cover-tag'>
-            ${t('monitor.list.tag.auditFailed')}
+            '审核未通过'
         </a-tag>`;
     }
     return '';
@@ -58,7 +56,7 @@
   const columns = computed(() => {
     return [
       {
-        title: t('monitor.list.title.order'),
+        title: '序号',
         render({
           rowIndex,
         }: {
@@ -71,7 +69,7 @@
         },
       },
       {
-        title: t('monitor.list.title.cover'),
+        title: '封面',
         render({
           record,
         }: {
@@ -87,16 +85,16 @@
         },
       },
       {
-        title: t('monitor.list.title.name'),
+        title: '名称',
         dataIndex: 'name',
       },
       {
         dataIndex: 'duration',
-        title: t('monitor.list.title.duration'),
+        title: '视频时长',
       },
       {
         dataIndex: 'id',
-        title: t('monitor.list.title.id'),
+        title: '视频Id',
       },
     ];
   });

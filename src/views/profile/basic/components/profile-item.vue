@@ -27,7 +27,6 @@
 
 <script lang="ts" setup>
   import { computed, PropType } from 'vue';
-  import { useI18n } from 'vue-i18n';
   import { ProfileBasicRes } from '@/api/profile';
 
   type BlockList = {
@@ -52,83 +51,72 @@
       default: false,
     },
   });
-  const { t } = useI18n();
   const blockDataList = computed<BlockList>(() => {
     const { renderData } = props;
     const result = [];
     result.push({
-      title:
-        props.type === 'pre'
-          ? t('basicProfile.title.preVideo')
-          : t('basicProfile.title.video'),
+      title: props.type === 'pre' ? '原视频参数' : '现视频参数',
       data: [
         {
-          label: t('basicProfile.label.video.mode'),
+          label: '匹配模式',
           value: renderData?.video?.mode || '-',
         },
         {
-          label: t('basicProfile.label.video.acquisition.resolution'),
+          label: '采集分辨率',
           value: renderData?.video?.acquisition.resolution || '-',
         },
         {
-          label: t('basicProfile.label.video.acquisition.frameRate'),
+          label: '采集帧率',
           value: `${renderData?.video?.acquisition.frameRate || '-'} fps`,
         },
         {
-          label: t('basicProfile.label.video.encoding.resolution'),
+          label: '编码分辨率',
           value: renderData?.video?.encoding.resolution || '-',
         },
         {
-          label: t('basicProfile.label.video.encoding.rate.min'),
+          label: '编码码率最小值',
           value: `${renderData?.video?.encoding.rate.min || '-'} bps`,
         },
         {
-          label: t('basicProfile.label.video.encoding.rate.max'),
+          label: '编码码率最大值',
           value: `${renderData?.video?.encoding.rate.max || '-'} bps`,
         },
         {
-          label: t('basicProfile.label.video.encoding.rate.default'),
+          label: '编码码率默认值',
           value: `${renderData?.video?.encoding.rate.default || '-'} bps`,
         },
         {
-          label: t('basicProfile.label.video.encoding.frameRate'),
+          label: '编码帧率',
           value: `${renderData?.video?.encoding.frameRate || '-'} fpx`,
         },
         {
-          label: t('basicProfile.label.video.encoding.profile'),
+          label: '编码profile',
           value: renderData?.video?.encoding.profile || '-',
         },
       ],
     });
 
     result.push({
-      title:
-        props.type === 'pre'
-          ? t('basicProfile.title.preAudio')
-          : t('basicProfile.title.audio'),
+      title: props.type === 'pre' ? '原音频参数' : '现音频参数',
       data: [
         {
-          label: t('basicProfile.label.audio.mode'),
+          label: '匹配模式',
           value: renderData?.audio?.mode || '-',
         },
         {
-          label: t('basicProfile.label.audio.acquisition.channels'),
-          value: `${renderData?.audio?.acquisition.channels || '-'} ${t(
-            'basicProfile.unit.audio.channels'
-          )}`,
+          label: '采集声道数',
+          value: `${renderData?.audio?.acquisition.channels || '-'} 声道`,
         },
         {
-          label: t('basicProfile.label.audio.encoding.channels'),
-          value: `${renderData?.audio?.encoding.channels || '-'} ${t(
-            'basicProfile.unit.audio.channels'
-          )}`,
+          label: '编码声道数',
+          value: `${renderData?.audio?.encoding.channels || '-'} 声道`,
         },
         {
-          label: t('basicProfile.label.audio.encoding.rate'),
+          label: '编码码率',
           value: `${renderData?.audio?.encoding.rate || '-'} kbps`,
         },
         {
-          label: t('basicProfile.label.audio.encoding.profile'),
+          label: '编码 profile',
           value: renderData?.audio?.encoding.profile || '-',
         },
       ],

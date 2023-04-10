@@ -1,20 +1,20 @@
 <template>
   <div class="container">
-    <Breadcrumb :items="['menu.result', 'menu.result.error']" />
+    <Breadcrumb :items="['结果页', '失败页']" />
     <div class="wrapper">
       <a-result
         class="result"
         status="error"
-        :title="$t('error.result.title')"
-        :subtitle="$t('error.result.subTitle')"
+        :title="'提交失败'"
+        :subtitle="'表单提交失败，请重试。'"
       >
         <template #extra>
           <a-space class="operation-wrap" :size="16">
             <a-button key="again" type="secondary">
-              {{ $t('error.result.goBack') }}
+              {{ '回到首页' }}
             </a-button>
             <a-button key="back" type="primary">
-              {{ $t('error.result.retry') }}
+              {{ '返回修改' }}
             </a-button>
           </a-space>
         </template>
@@ -22,18 +22,18 @@
 
       <div class="details-wrapper">
         <a-typography-title :heading="6" style="margin-top: 0">
-          {{ $t('error.detailTitle') }}
+          {{ '错误详情' }}
         </a-typography-title>
         <a-typography-paragraph style="margin-bottom: 0">
           <ol>
             <li>
-              {{ $t('error.detailLine.record') }}
+              {{ '当前域名未备案，备案流程请查看：' }}
               <a-link>
                 <IconLink />
-                {{ $t('error.detailLine.record.link') }}
+                {{ '备案流程' }}
               </a-link>
             </li>
-            <li>{{ $t('error.detailLine.auth') }}</li>
+            <li>{{ '你的用户组不具有进行此操作的权限；' }}</li>
           </ol>
         </a-typography-paragraph>
       </div>

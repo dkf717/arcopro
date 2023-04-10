@@ -1,10 +1,10 @@
 <template>
   <a-card
     class="general-card"
-    :title="$t('monitor.studioStatus.title.studioStatus')"
+    :title="'直播状态'"
   >
     <template #extra>
-      <a-tag color="green">{{ $t('monitor.studioStatus.smooth') }}</a-tag>
+      <a-tag color="green">{{ '流畅' }}</a-tag>
     </template>
     <a-descriptions layout="horizontal" :data="dataStatus" :column="2">
       <template #label="{ label }">
@@ -12,15 +12,15 @@
           v-if="['mainstream', 'hotStandby', 'coldStandby'].includes(label)"
         >
           <a-typography-text style="padding-right: 8px">
-            {{ $t(`monitor.studioStatus.${label}`) }}
+            {{ `monitor.studioStatus.${label}` }}
           </a-typography-text>
-          {{ $t('monitor.studioStatus.bitRate') }}
+          {{ '码率' }}
         </span>
         <span v-else>{{ label }}</span>
       </template>
     </a-descriptions>
     <a-typography-title style="margin-bottom: 16px" :heading="6">
-      {{ $t('monitor.studioStatus.title.pictureInfo') }}
+      {{ '画面信息' }}
     </a-typography-title>
     <a-descriptions layout="horizontal" :data="dataPicture" :column="2" />
   </a-card>
@@ -28,16 +28,14 @@
 
 <script lang="ts" setup>
   import { computed } from 'vue';
-  import { useI18n } from 'vue-i18n';
 
-  const { t } = useI18n();
   const dataStatus = computed(() => [
     {
       label: 'mainstream',
       value: '6 Mbps',
     },
     {
-      label: t('monitor.studioStatus.frameRate'),
+      label: '帧率',
       value: '60',
     },
     {
@@ -45,7 +43,7 @@
       value: '6 Mbps',
     },
     {
-      label: t('monitor.studioStatus.frameRate'),
+      label: '帧率',
       value: '60',
     },
     {
@@ -53,13 +51,13 @@
       value: '6 Mbps',
     },
     {
-      label: t('monitor.studioStatus.frameRate'),
+      label: '帧率',
       value: '60',
     },
   ]);
   const dataPicture = computed(() => [
     {
-      label: t('monitor.studioStatus.line'),
+      label: '线路',
       value: '热备',
     },
     {
@@ -67,11 +65,11 @@
       value: 'KS',
     },
     {
-      label: t('monitor.studioStatus.play'),
+      label: '播放格式',
       value: 'FLV',
     },
     {
-      label: t('monitor.studioStatus.pictureQuality'),
+      label: '画质',
       value: '原画',
     },
   ]);

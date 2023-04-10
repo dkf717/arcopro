@@ -1,11 +1,6 @@
 <template>
   <div class="container">
-    <Breadcrumb
-      :items="[
-        'menu.visualization',
-        'menu.visualization.multiDimensionDataAnalysis',
-      ]"
-    />
+    <Breadcrumb :items="['数据可视化', '多维数据分析']" />
     <a-space direction="vertical" :size="16" fill>
       <a-grid :cols="24" :col-gap="16" :row-gap="16">
         <a-grid-item

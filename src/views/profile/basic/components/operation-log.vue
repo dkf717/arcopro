@@ -1,42 +1,42 @@
 <template>
   <a-card class="general-card">
     <template #title>
-      {{ $t('basicProfile.title.operationLog') }}
+      {{ '参数调整记录' }}
     </template>
     <a-spin :loading="loading" style="width: 100%">
       <a-table :data="renderData">
         <template #columns>
           <a-table-column
-            :title="$t('basicProfile.column.contentNumber')"
+            :title="'内容编号'"
             data-index="contentNumber"
           />
           <a-table-column
-            :title="$t('basicProfile.column.updateContent')"
+            :title="'调整内容'"
             data-index="updateContent"
           />
           <a-table-column
-            :title="$t('basicProfile.column.status')"
+            :title="'当前状态'"
             data-index="status"
           >
             <template #cell="{ record }">
               <p v-if="record.status === 0">
                 <span class="circle"></span>
-                <span>{{ $t('basicProfile.cell.auditing') }}</span>
+                <span>{{ '审核中' }}</span>
               </p>
               <p v-if="record.status === 1">
                 <span class="circle pass"></span>
-                <span>{{ $t('basicProfile.cell.pass') }}</span>
+                <span>{{ '已通过' }}</span>
               </p>
             </template>
           </a-table-column>
           <a-table-column
-            :title="$t('basicProfile.column.updateTime')"
+            :title="'修改时间'"
             data-index="updateTime"
           />
-          <a-table-column :title="$t('basicProfile.column.operation')">
+          <a-table-column :title="'操作'">
             <template #cell>
               <a-button type="text">{{
-                $t('basicProfile.cell.view')
+                '查看'
               }}</a-button>
             </template>
           </a-table-column>

@@ -1,14 +1,14 @@
 <template>
   <div class="container">
-    <Breadcrumb :items="['menu.exception', 'menu.exception.403']" />
+    <Breadcrumb :items="['异常页', '403']" />
     <div class="content">
       <a-result
         class="result"
         status="403"
-        :subtitle="$t('exception.result.403.description')"
+        :subtitle="'对不起，您没有访问该资源的权限'"
       />
       <a-button key="back" type="primary">
-        {{ $t('exception.result.403.back') }}
+        {{ '返回' }}
       </a-button>
     </div>
   </div>

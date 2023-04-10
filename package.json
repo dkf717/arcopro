@@ -11,8 +11,7 @@
     "report": "cross-env REPORT=true npm run build",
     "preview": "npm run build && vite preview --host",
     "type:check": "vue-tsc --noEmit --skipLibCheck",
-    "lint-staged": "npx lint-staged",
-    "prepare": "husky install"
+    "lint-staged": "npx lint-staged"
   },
   "lint-staged": {
     "*.{js,ts,jsx,tsx}": [
@@ -43,7 +42,6 @@
     "sortablejs": "^1.15.0",
     "vue": "^3.2.40",
     "vue-echarts": "^6.2.3",
-    "vue-i18n": "^9.2.2",
     "vue-router": "^4.0.14"
   },
   "devDependencies": {

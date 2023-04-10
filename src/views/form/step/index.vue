@@ -1,10 +1,10 @@
 <template>
   <div class="container">
-    <Breadcrumb :items="['menu.form', 'menu.form.step']" />
+    <Breadcrumb :items="['表单页', '分步表单']" />
     <a-spin :loading="loading" style="width: 100%">
       <a-card class="general-card">
         <template #title>
-          {{ $t('stepForm.step.title') }}
+          {{ '创建渠道表单' }}
         </template>
         <div class="wrapper">
           <a-steps
@@ -13,14 +13,14 @@
             line-less
             class="steps"
           >
-            <a-step :description="$t('stepForm.step.subTitle.baseInfo')">
-              {{ $t('stepForm.step.title.baseInfo') }}
+            <a-step :description="'创建渠道活动'">
+              {{ '选择基本信息' }}
             </a-step>
-            <a-step :description="$t('stepForm.step.subTitle.channel')">
-              {{ $t('stepForm.step.title.channel') }}
+            <a-step :description="'输入详细的渠道信息'">
+              {{ '输入渠道信息' }}
             </a-step>
-            <a-step :description="$t('stepForm.step.subTitle.finish')">
-              {{ $t('stepForm.step.title.finish') }}
+            <a-step :description="'创建成功'">
+              {{ '完成创建' }}
             </a-step>
           </a-steps>
           <keep-alive>

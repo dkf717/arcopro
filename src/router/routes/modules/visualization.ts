@@ -6,7 +6,7 @@ const VISUALIZATION: AppRouteRecordRaw = {
   name: 'visualization',
   component: DEFAULT_LAYOUT,
   meta: {
-    locale: 'menu.visualization',
+    locale: '数据可视化',
     requiresAuth: true,
     icon: 'icon-apps',
     order: 1,
@@ -17,7 +17,7 @@ const VISUALIZATION: AppRouteRecordRaw = {
       name: 'DataAnalysis',
       component: () => import('@/views/visualization/data-analysis/index.vue'),
       meta: {
-        locale: 'menu.visualization.dataAnalysis',
+        locale: '分析页',
         requiresAuth: true,
         roles: ['admin'],
       },
@@ -28,7 +28,7 @@ const VISUALIZATION: AppRouteRecordRaw = {
       component: () =>
         import('@/views/visualization/multi-dimension-data-analysis/index.vue'),
       meta: {
-        locale: 'menu.visualization.multiDimensionDataAnalysis',
+        locale: '多维数据分析',
         requiresAuth: true,
         roles: ['admin'],
       },

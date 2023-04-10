@@ -74,7 +74,7 @@ setupMock({
           path: '/dashboard',
           name: 'dashboard',
           meta: {
-            locale: 'menu.server.dashboard',
+            locale: '仪表盘-服务端',
             requiresAuth: true,
             icon: 'icon-dashboard',
             order: 1,
@@ -84,7 +84,7 @@ setupMock({
               path: 'workplace',
               name: 'Workplace',
               meta: {
-                locale: 'menu.server.workplace',
+                locale: '工作台-服务端',
                 requiresAuth: true,
               },
             },
@@ -92,7 +92,7 @@ setupMock({
               path: 'https://arco.design',
               name: 'arcoWebsite',
               meta: {
-                locale: 'menu.arcoWebsite',
+                locale: 'Arco Design',
                 requiresAuth: true,
               },
             },
